@@ -1,0 +1,66 @@
+body {
+  padding: 30px;
+  text-align: center;
+}
+
+.loader {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 15px solid transparent;
+  margin: 0 auto;
+}
+
+.dot-pink, .dot-blue {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  -webkit-animation: pink 0.8s ease-in-out infinite;
+  animation: pink 0.8s ease-in-out infinite;
+}
+
+.dot-pink {
+  background: #ff5954;
+  left: -2px;
+}
+
+.dot-blue {
+  -webkit-animation-name: blue;
+  animation-name: blue;
+  background: #00a8ce;
+  right: -2px;
+}
+
+@-webkit-keyframes pink {
+  0% {
+    z-index: 1;
+  }
+
+  50% {
+    -webkit-transform: translateX(24px);
+  }
+}
+@-webkit-keyframes blue {
+  50% {
+    -webkit-transform: translateX(-24px);
+  }
+}
+
+@keyframes pink {
+  0% {
+    z-index: 1;
+  }
+
+  50% {
+    transform: translateX(24px);
+  }
+}
+@keyframes blue {
+  50% {
+    transform: translateX(-24px);
+  }
+}
+

@@ -1,0 +1,16 @@
+<ons-toolbar>
+  <div class="center">Sign Up</div>
+</ons-toolbar>
+<div class="sign-up">
+  <input type="text" class="text-input--underbar" placeholder="Name" value="" ng-model="user.name">
+  <input type="email" class="text-input--underbar" placeholder="Email" value="" ng-model="user.email">
+  <input type="password" class="text-input--underbar" placeholder="Password" value="" ng-model="user.password">
+  <br/>
+  <button class="button login-button" ng-click="createUser()">Sign Up</button>
+<!--
+  <ons-button
+    ng-click="myNavigator.pushPage('welcomeFork.html', {hoge: 'hoge'})">
+   Sign In
+  </ons-button>
+-->
+</div>

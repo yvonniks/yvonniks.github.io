@@ -1,0 +1,104 @@
+
+<ons-page modifier="welcomeFork" ng-controller="WelcomeForkController">
+  <ons-toolbar modifier="darkToolbar">
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Request</div>
+    <div class="right">
+      <ons-button modifier="quiet cancel" ng-click="cancelRequest()"><i class="hi hi-close"></i></ons-button>
+    </div>
+  </ons-toolbar>
+  <ons-row>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+      <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+  </ons-row>
+  <div class="main-page-content">
+    <h3>I am looking for</h3>
+    <div class = "textInputDiv">
+    <!--
+      <input type="text" ng-model="data.searchParam" class="text-input" placeholder="Search" value="" ng-enter="submit()" auto-focus >
+      <button ng-click="submit()"><i class="fa fa-search"></i></button>
+        
+<select class="turnintodropdown">
+    <option value="">Select a category</option>
+    <option value="01">Car Maintenance</option>
+    <option value="02">Car Wash/Detail</option>
+    <option value="03">Child Care</option>
+    <option value="04">Commuter Assistance</option>
+    <option value="05">Copies & Fax</option>
+    <option value="06">Dry Cleaning/Laundry Services</option>
+    <option value="07">Escorting Guests</option>
+    <option value="08">Event Planning</option>
+    <option value="09">Event Ticket Information</option>
+    <option value="10">Flowers & Gifts</option>
+    <option value="11">Gift Wrapping</option>
+    <option value="12">Home Services</option>
+    <option value="13">Information</option>
+    <option value="14">Internet Research</option>
+    <option value="15">Jewelry/Watch Repair</option>
+    <option value="16">Mail Dropoff</option>
+    <option value="17">Monthly Promotion</option>
+    <option value="18">Notary Service</option>
+    <option value="19">Pet Services</option>
+    <option value="20">Program Education</option>
+    <option value="21">Shoe and Leather Repair</option>
+    <option value="22">Sightseeing Information</option>
+    <option value="23">Stamps/Postage Assistance</option>
+    <option value="24">Travel Arrangements</option>
+    <option value="25">Other</option>
+</select> 
+
+<br />
+ --> 
+
+<select class="dropdown-form-control">
+    <option value="">Select a category</option>
+    <option value="01">Car Maintenance</option>
+    <option value="02">Car Wash/Detail</option>
+    <option value="03">Child Care</option>
+    <option value="04">Commuter Assistance</option>
+    <option value="05">Copies & Fax</option>
+    <option value="06">Dry Cleaning/Laundry Services</option>
+    <option value="07">Escorting Guests</option>
+    <option value="08">Event Planning</option>
+    <option value="09">Event Ticket Information</option>
+    <option value="10">Flowers & Gifts</option>
+    <option value="11">Gift Wrapping</option>
+    <option value="12">Home Services</option>
+    <option value="13">Information</option>
+    <option value="14">Internet Research</option>
+    <option value="15">Jewelry/Watch Repair</option>
+    <option value="16">Mail Dropoff</option>
+    <option value="17">Monthly Promotion</option>
+    <option value="18">Notary Service</option>
+    <option value="19">Pet Services</option>
+    <option value="20">Program Education</option>
+    <option value="21">Shoe and Leather Repair</option>
+    <option value="22">Sightseeing Information</option>
+    <option value="23">Stamps/Postage Assistance</option>
+    <option value="24">Travel Arrangements</option>
+    <option value="25">Other</option>
+</select>
+    
+</div>
+     
+    <div class="hint-text">
+    <p>What type of service are you looking for? Please select from the list of categories. </p>
+    </div>
+    
+    <div class="submitButtonContainer">
+    <ons-button ng-click="submit()" modifier="large">Next</ons-button>
+    </div>
+  </div>
+</ons-page>

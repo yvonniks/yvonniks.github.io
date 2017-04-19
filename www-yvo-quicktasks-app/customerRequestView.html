@@ -1,0 +1,56 @@
+<ons-page ng-controller="CustomerRequestViewController" class="customerRequestView">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Request</div>
+  </ons-toolbar>
+
+	<div style="text-align: center">
+    <div class="panel-account">
+      <div class="panel-pic">
+        <img src="img/photos/zac-efron.png"/>
+      </div>
+      <div class="panel-account-text">
+        <div class="requestSummary" >
+          Pipe Repair Replacement Needed!
+        </div>
+        <div class="companyName">
+          Zac E.
+      	</div>
+        <div class="location">
+          San Jose, CA
+      	</div>
+      </div>
+    </div>
+    <div class="panel-description">
+    	<label>Details</label><br/>
+    	<p>
+    		We have a leaky faucet that we need repaired.
+    		It may need to be replaced. Not sure. We also have
+    		an issue with noisy pipes when the sprinklers are turned on.
+    		Need immediate service!
+    	</p>
+	</div>
+    <div class="panel-availability">
+    	<i class="fa fa-clock-o"></i>
+    	<label>Time / Location Request</label><br/>
+    	<p>
+    		05/30/2014, 11:00 PM<br/>
+    		Mountain View, CA
+    	</p>
+    </div>
+    <div class="panel-offer">
+		<i class="fa fa-dollar"></i><label>Offer</label><br/>
+		<p>$100-$130</p>
+    </div>
+  </div>
+  <ons-bottom-toolbar>
+
+    <div class="center">
+    	<ons-button modifier="large" ng-click="myNavigator.pushPage('customerConnect.html', {hoge: 'hoge'})">Connect</ons-button>
+
+    </div>
+
+  </ons-bottom-toolbar>
+</ons-page>

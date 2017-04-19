@@ -1,0 +1,101 @@
+<ons-page ng-controller="providerViewController">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Service Provider</div>
+	<div class="right">
+      <ons-button ng-click="myNavigator.popPage()">Edit</ons-button>
+    </div>
+  </ons-toolbar>
+
+	<div style="text-align: center">
+    <div class="panel-account">
+      <div class="panel-pic">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="panel-account-text">
+        <div class="yourName" >
+          {{item.yourName}}
+        </div>
+        <div class="companyName">
+          {{item.companyName}}
+      	</div>
+        <div class="location
+        ">
+          {{item.location}}
+      	</div>
+      </div>
+    </div>
+    <div class="panel-description">
+		{{item.desc}}
+	</div>
+	<div class="panel-specialties">
+		{{item.specialties}}
+    </div>
+    <div class="panel-availability">
+      <div>
+
+        <i class="fa fa-dollar"></i><label></label> {{item.charge}} per {{item.chargeunit}}
+
+    </div>
+    <div>
+
+          <i class="fa fa-clock-o"></i> {{item.radius}} miles from {{item.zipcode}}
+
+
+      </div>
+    </div>
+    <div class="panel-hours">
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.su"></i>
+      <i class="fa fa-check-square-o" ng-show="item.su"></i>
+      Sunday
+    </label><br/>
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.mon"></i>
+      <i class="fa fa-check-square-o" ng-show="item.mon"></i>
+      Monday
+    </label><br/>
+
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.tue"></i>
+      <i class="fa fa-check-square-o" ng-show="item.tue"></i>
+      Tuesday
+    </label><br/>
+
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.wed"></i>
+      <i class="fa fa-check-square-o" ng-show="item.wed"></i>
+      Wednesday
+    </label><br/>
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.thu"></i>
+      <i class="fa fa-check-square-o" ng-show="item.thu"></i>
+      Thursday
+    </label><br/>
+
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.fri"></i>
+      <i class="fa fa-check-square-o" ng-show="item.fri"></i>
+      Friday
+    </label><br/>
+
+    <label class="checkbox--noborder day-of-week">
+      <i class="fa fa-square-o" ng-hide="item.sat"></i>
+      <i class="fa fa-check-square-o" ng-show="item.sat"></i>
+      Saturday
+   </label><br/>
+		</div>
+
+    </div>
+  </div>
+  <ons-bottom-toolbar>
+
+    <div class="center">
+    	<ons-button modifier="large" ng-click="myNavigator.pushPage('customerSearchResults.html', {hoge: 'hoge'})">Find a Match</ons-button>
+
+    </div>
+
+  </ons-bottom-toolbar>
+</ons-page>

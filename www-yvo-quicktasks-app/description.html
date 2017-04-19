@@ -1,0 +1,37 @@
+<ons-page ng-controller="DescriptionController" modifier="description">
+  <ons-toolbar modifier="darkToolbar">
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Welcome</div>
+    <div class="right">
+      <ons-button modifier="quiet cancel" ng-click="cancelRequest()"><i class="hi hi-close"></i></ons-button>
+    </div>
+  </ons-toolbar>
+  <ons-row>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+  </ons-row>
+  <div class="main-page-content">
+    <h3>Description</h3>
+    <textarea class="textarea" placeholder="Description" ng-model="data.descParam" auto-focus></textarea>
+    
+        <div class="hint-text">
+    <p>Any additional info or description will help us help you. </p>
+    </div>
+    
+    <div class="submitButtonContainer">
+      <ons-button ng-click="submit()" modifier="large">Next</ons-button>
+    </div>
+  </div>
+</ons-page>

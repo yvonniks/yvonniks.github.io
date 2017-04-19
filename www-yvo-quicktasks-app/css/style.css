@@ -1,0 +1,304 @@
+/* Empty. Add your own CSS if you like */
+.margin {
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.icon-actions {
+    font-size: 23px;
+}
+.checkbox {
+    vertical-align: middle;
+}
+.actions {
+    float: right;
+}
+.item-text-wrap {
+    overflow: auto;
+}
+.ion-checkmark-circled.icon-actions.margin {
+    margin-right: 35px;
+}
+
+
+.item-avatar.provider {
+    background: url("../img/profile-bg.png") no-repeat;
+}
+
+.item-avatar .profile-info {
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+}
+.item-avatar > img:first-child {
+    max-width: 50px;
+    max-height: 50px;
+}
+.item-avatar.customer >img:first-child {
+    border: 2px solid #fd6566;
+    border-radius: 50%;
+}
+p.profile-description.ng-binding {
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 10px 5px;
+    position: relative;
+    line-height: 1.2em;
+    background: #fff;
+}
+p.profile-description:before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: white;
+    position: absolute;
+    top: -4px;
+    left: 15px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-left: none;
+    -webkit-transform: rotate(-45deg);
+}
+.profile-description-container {
+    background: #ccc;
+}
+.profile-photos {
+    display: inline-block;
+    width: 60px;
+}
+.ion-star,
+.ion-camera {
+    color: #22bdff;
+    font-size: 18px;
+    line-height: 18px;
+}
+.button.button-positive {
+    border-color: transparent;
+    background-color: #00adef;
+    color: #fff
+}
+.button.button-block, .button.button-full {
+    margin-top: 0;
+}
+.checkbox input:before, .checkbox .checkbox-icon:before{
+    border-radius: 3px;
+}
+.availFields {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.availFields .item {
+    float: left;
+}
+.availDay {
+    width: 40%;
+    /* border: 1px solid red; */
+}
+.availHour {
+    /* margin-top: 3px; */
+    width: 60%;
+    padding-top: 9px;
+}
+
+
+li.convo-item {
+    margin: 10px 0 0;
+    padding: 5px 5px 0 5px;
+    position: relative;
+}
+.convo-item .avatar {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #969696;
+    display: block;
+    border-radius: 2px;
+}
+.convo-item .message {
+    display: block;
+    vertical-align: top;
+    padding: 10px 20px;
+    position: relative;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    min-height: 46px;
+}
+.convo-item.provider .avatar {
+    float: left;
+    border: 2px solid #00a8ce;
+    border-radius: 50%;
+
+}
+.convo-item.provider .message {
+    margin-left: 60px;
+    clear: right;
+}
+.convo-item.customer .avatar {
+    float: right;
+    border: 2px solid #fd6566;
+    border-radius: 50%;
+}
+.convo-item.customer .message {
+    margin-right: 60px;
+    border: 1px solid #dedede;
+}
+/*
+.convo-item.provider .message{
+    border-color: #00a8ce;
+}
+.convo-item.customer .message {
+    border-color:  #ff5954;
+}
+*/
+.page__content.ons-page-inner {
+    background: url("../img/background-images/1_intro_frames.gif");
+    background-color: red;
+}
+li.convo-item.provider .message:before {
+    content:"";
+    border: 1px solid #dedede;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    left: -4px;
+    top: 45%;
+    -webkit-transform: rotate(45deg);
+    background: #fff;
+    z-index: 1;
+    border-right: none;
+    border-top: none
+}
+
+
+li.convo-item.customer .message:before {
+    content:"";
+    border: 1px solid #dedede;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: -4px;
+    top: 45%;
+    -webkit-transform: rotate(225deg);
+    background: #fff;
+    z-index: 1;
+    border-right: none;
+    border-top: none
+}
+
+.profile-empty {
+    margin: 0;
+    background: url("../img/profile-empty.png") no-repeat;
+    background-size: 133px;
+    height: 155px;
+    display: block;
+    float: left;
+}
+
+.desc-field textarea,
+.tags-field textarea {
+    height: 80px;
+}
+.days-of-week{
+    padding-left: 0;
+    margin-left: -5px;
+}
+.days-of-week .button {
+    border-color: #d1d1d1;
+}
+.group-1 {
+    margin-bottom: 0;
+}
+.group-1 .item {
+    border-color: #cbcbcb;
+}
+.group-2 {
+    background: #f1f1f3;
+}
+.group-2 .item {
+    border-color: #cbcbcb;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button.button.button-block.button-positive.customer-btn {
+    background: #fd6566;
+}
+.profile-info {
+    background: #0e86d4;
+    padding: 0;
+}
+.profile-info .col-33 {
+    padding: 0;
+}
+.profile-info .item {
+    border-color: transparent;
+}
+.profile-empty ~.col {
+    margin-left: -20px;
+}
+.profile-info ~.col{
+    margin-left: -20px;
+}
+
+.profile-pic {
+    padding: 0;
+    display: block;
+    float: left;
+    margin: 0;
+}
+.profile-pic img{
+    width: 153px;
+    height: 139px;
+    float: left;
+    padding: 0;
+}
+.profile-pic ~.col {
+    background: #0e86d4;
+    color: #fff;
+    padding: 0;
+    margin-left: 10px;
+}
+.profile-info .item {
+    background: transparent;
+}
+.profile-info input {
+    color: #afe8fc;
+    border-bottom: 1px solid #57cef9;
+}
+.profile-info .yourName {
+    /* margin-top: 0px; */
+    font-size: 22px;
+}
+.profile-info .companyName,
+.profile-info .location {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.profile-info .group-1 {
+    background: #f1f1f3;
+}
+.profile-info .group-2 {
+    margin-left: -20px;
+}
+
+.list.card.customer-list {
+margin-top: 0;
+margin-bottom: 0;
+}
+.list.card.customer-list {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom-color: transparent;
+}
+a.item.item-avatar.customer {
+    border-bottom-color: transparent;
+    border-radius: 0;
+    /* border-bottom-left-radius: 0; */
+}
+.list.card:last-child a.item.item-avatar.customer {
+    border-bottom-color: #ddd;
+}
+

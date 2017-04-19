@@ -1,0 +1,26 @@
+<ion-header-bar class="bar bar-header bar-dark">
+  <a class="button button-dark icon-left ion-chevron-left" href="#/search/customers">Back</a>
+   <h1 class="title">Customer</h1>
+
+
+</ion-header-bar>
+<ion-content class="has-header">
+   <div class="list card">
+      <div class="item item-avatar customer">
+        <img src="img/photos/zac-efron.png">
+        <div class="profile-info">{{data.customer_name}}</div>
+      </div>
+      <div class="item item-body profile-description-container">
+          <p class="profile-description">
+            {{ data.request_desc }}
+          </p>
+      </div>
+      <div class="item item-body">
+        <h3>Details</h3>
+        <p>
+          {{ data.request_details }}
+        </p>
+      </div>
+   </div>
+
+</ion-content>

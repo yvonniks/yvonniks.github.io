@@ -1,0 +1,40 @@
+<ons-page ng-controller="LocationController" modifier="location">
+  <ons-toolbar modifier="darkToolbar">
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Request</div>
+    <div class="right">
+      <ons-button modifier="quiet cancel" ng-click="cancelRequest()"><i class="hi hi-close"></i></ons-button>
+    </div>
+  </ons-toolbar>
+  <ons-row>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col>
+    </ons-col>
+      <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+  </ons-row>
+  <div class="main-page-content">
+    <h3>Near</h3>
+    <div class = "textInputDiv">
+      <input type="number" ng-model="data.locationParam" class="text-input" placeholder="Zipcode" value="" ng-enter="submit()" auto-focus>
+      <button ng-click="submit()"><i class="fa fa-location-arrow"></i></button>
+    </div>
+    
+    <div class="hint-text">
+    <p>Enter zip code (ex. "94043") </p>
+    </div>
+    
+    <div class="submitButtonContainer">
+      <ons-button ng-click="submit()" modifier="large">Next</ons-button>
+    </div>
+  </div>
+</ons-page>

@@ -1,0 +1,92 @@
+<ons-page ng-controller="providerFormController">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Service Provider</div>
+	<div class="right">
+      <ons-button ng-click="save()">Save</ons-button>
+    </div>
+  </ons-toolbar>
+
+	<div style="text-align: center">
+    <div class="panel-account">
+      <div class="panel-pic">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="panel-account-text">
+        <div>
+          <input type="text" class="text-input--underbar" placeholder="Name" value="" size="15" ng-model="data.yourName">
+
+        </div>
+        <div>
+          <input type="text" class="text-input--underbar" placeholder="Company" value="" size="15" ng-model="data.companyName">
+        </div>
+        <div>
+          <input type="text" class="text-input--underbar" placeholder="Location" value="" size="15" ng-model="data.location">
+        </div>
+      </div>
+    </div>
+    <div class="panel-description">
+		<textarea class="textarea--transparent" rows="3" placeholder="Description" ng-model="data.desc"></textarea>
+	</div>
+	<div class="panel-specialties">
+		<textarea class="textarea--transparent" rows="3" placeholder="Specialties"  ng-model="data.specialties"></textarea>
+    </div>
+    <div class="panel-availability">
+      <div>
+        <input type="text" class="text-input width-45" placeholder=" Charge" value=""  ng-model="data.charge">
+        <p class="unit-label">per</p>
+        <input type="text" class="text-input width-45" placeholder="Hour" value=""  ng-model="data.chargeunit">
+      </div>
+      	<div>
+        <input type="text" class="text-input  width-45" placeholder=" Miles" value=""  ng-model="data.radius">
+        <p class="unit-label">from</p>
+        <input type="text" class="text-input width-45" placeholder="Zip" value=""  ng-model="data.zipcode">
+      	</div>
+
+      <div>
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.su">
+		  <div class="checkbox__checkmark"></div>
+		  S
+		</label>
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.mon">
+		  <div class="checkbox__checkmark"></div>
+		  M
+		</label>
+
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.tue">
+		  <div class="checkbox__checkmark"></div>
+		  T
+		</label>
+
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.wed">
+		  <div class="checkbox__checkmark"></div>
+		  W
+		</label>
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.thu">
+		  <div class="checkbox__checkmark"></div>
+		  T
+		</label>
+
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.fri">
+		  <div class="checkbox__checkmark"></div>
+		  F
+		</label>
+
+		<label class="checkbox--noborder day-of-week">
+		  <input type="checkbox" ng-model="data.sat">
+		  <div class="checkbox__checkmark"></div>
+		  S
+		</label>
+		</div>
+
+    </div>
+  </div>
+</ons-page>

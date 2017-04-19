@@ -1,0 +1,50 @@
+<ion-header-bar class="bar bar-header bar-dark">
+  <button class="button button-dark icon-left ion-chevron-left" ng-click="logout()">Logout</button>
+   <h1 class="title">My Profile</h1>
+   <button class="button button-positive" ng-click="updateProfile('{{list[0]._id}}')"  ng-hide="noData">Edit</button>
+
+</ion-header-bar>
+<ion-content class="has-header">
+  <div ng-hide="noData">
+    <div class="row profile-info">
+      <div class="col col-50 profile-pic">
+        <img ng-src="img/profile-small.png" src="img/profile-small.png">
+      </div>
+      <div class="col">
+        <p class="yourName">{{item.yourName}}</p>
+        <p class="companyName">{{item.companyName}}</p>
+        <p class="location">{{item.location}}</p>
+      </div>
+    </div>
+    <div class="group-1">
+      <div class="row">
+        <div class="col">
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>{{ item.tags }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="group-2">
+      <img src="img/profile-photos.png" width="320px"/>
+    </div>
+  </div>
+  <div ng-show="noData">
+   <div class="card" >
+      <div class="item item-text-wrap">
+         <button class="button button-block button-positive" ng-click="createProviderProfile()">I am a Service Provider</button>
+      </div>
+      <div class="item item-text-wrap">
+         <button class="button button-block button-positive customer-btn">I am a Customer</button>
+      </div>
+   </div>
+  </div>
+</ion-content>
+<ion-footer-bar class="bar">
+  <div class="button-bar" >
+    <a class="button button-block button-positive find-a-match-btn" href="#/search/customers"  ng-hide="noData">Find a Match</a>
+   </div>
+</ion-footer-bar>

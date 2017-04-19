@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="quickTasksApp">
+<head>
+  <meta charset="utf-8">
+  <title>QuickTasks</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/app.css"/>
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+  <!-- Latest compiled and minified CSS -->
+  <!--
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+-->
+
+  <!-- Optional theme -->
+ <!--
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+-->
+
+  <!-- Latest compiled and minified JavaScript -->
+
+<!-- start Mixpanel -->
+<script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("36c203420544515b4c760e8e7e1ff15a");</script>
+<!-- end Mixpanel -->
+
+  <script src="lib/onsen/js/angular/angular.js"></script>
+  <script src="lib/onsen/js/angular/angular-ui.js"></script>
+  <script src="lib/onsen/js/onsenui.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+<div class="phone-background"> 
+  <ons-navigator var="myNavigator">
+    <ons-page ng-controller="WelcomePageController" modifier="home">
+      <ons-toolbar modifier="darkToolbar">
+        <div class="center">Welcome</div>
+      </ons-toolbar>
+      <div class="main-page-content">
+         <button class="button login-button"  ng-click="myNavigator.pushPage('welcomeFork.html', { animation : 'slide' } )"></button>
+
+      </div>
+    </ons-page>
+  </ons-navigator>
+</div> 
+
+</body>
+</html>

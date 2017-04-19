@@ -1,0 +1,69 @@
+<div class="modal slide-in-up" ng-controller="newCtrl">
+  <ion-header-bar align-title="center" class="bar-dark">
+      <button class="button button-dark icon-left ion-chevron-left" ng-click="close()">Cancel</button>
+      <h1 class="title">Profile</h1>
+      <button class="button button-positive" ng-click="create()">Save</button>
+  </ion-header-bar>
+   <ion-content class="has-header">
+      <div class="row profile-info">
+        <div class="col col-50 profile-empty">
+        </div>
+        <div class="col">
+            <label class="item item-input">
+              <input type="text" placeholder="Your Name" ng-model="data.yourName">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Company Name" ng-model="data.companyName">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Location" ng-model="data.location">
+            </label>
+        </div>
+      </div>
+      <div class="list group-1">
+        <label class="item item-input desc-field">
+          <textarea placeholder="Description" ng-model="data.description"></textarea>
+        </label>
+        <label class="item item-input tags-field">
+          <textarea placeholder="Tags" ng-model="data.tags"></textarea>
+        </label>
+      </div>
+      <div class="group-2">
+        <div class="row">
+          <div class="col col-60"><i class="ion-social-usd"></i> Charge </div>
+          <div class="col"><input type="text" placeholder="Rate" ng-model="data.tocharge"></div>
+          <div class="col"><input type="text" placeholder="Per" ng-model="data.chargeunit"></div>
+        </div>
+
+        <div class="row">
+          <div class="col col-60"><i class="ion-ios7-location"></i> Availability </div>
+          <div class="col"><input type="text" placeholder="Miles" ng-model="data.range"></div>
+          <div class="col"><input type="text" placeholder="Zipcode" ng-model="data.zipcode"></div>
+        </div>
+
+        <div class="row days-of-week">
+          <div class="col"><button class="button"> S</button></div>
+          <div class="col"><button class="button"> M</button></div>
+          <div class="col"><button class="button"> T</button></div>
+          <div class="col"><button class="button"> W</button></div>
+          <div class="col"><button class="button"> T</button></div>
+          <div class="col"><button class="button"> F</button></div>
+          <div class="col"><button class="button"> S</button></div>
+
+        </div>
+        <div class="list">
+          <div class="item"><input type="text" placeholder="Sunday Hours" ng-model="data.sunHours"></div>
+          <div class="item"><input type="text" placeholder="Monday Hours" ng-model="data.monHours"></div>
+          <div class="item"><input type="text" placeholder="Tuesday Hours" ng-model="data.tueHours"></div>
+          <div class="item"><input type="text" placeholder="Wednesday Hours" ng-model="data.wedHours"></div>
+          <div class="item"><input type="text" placeholder="Thursday Hours" ng-model="data.thuHours"></div>
+          <div class="item"><input type="text" placeholder="Friday Hours" ng-model="data.friHours"></div>
+          <div class="item"><input type="text" placeholder="Saturday Hours" ng-model="data.satHours"></div>
+
+
+        </div>
+      </div>
+  </ion-content>
+</div>
+
+

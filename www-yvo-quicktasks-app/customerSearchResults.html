@@ -1,0 +1,77 @@
+<ons-page ng-controller="CustomerSearchController">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Customer</div>
+  </ons-toolbar>
+  <ons-list class="customer-search-results">
+	<ons-list-item modifier="tappable">
+		<img src="img/photos/bruno-mars.png"/>
+		<a class="customer-request" ng-click="myNavigator.pushPage('customerRequestView.html')">
+			<div class="customer-request-description">
+				Pipe Repair or Replacement
+			</div>
+			<div class="customer-request-location">
+			</div>
+		</a>
+		<span class="list-item-action">
+          <i class="fa fa-angle-right"></i>
+        </span>
+	</ons-list-item>
+	<ons-list-item modifier="tappable">
+		<img src="img/photos/zac-efron.png"/>
+		<a class="customer-request" ng-click="myNavigator.pushPage('customerRequestView.html')">
+			<div class="customer-request-description">
+				Bathroom tub repair
+			</div>
+			<div class="customer-request-location">
+			</div>
+		</a>
+		<span class="list-item-action">
+          <i class="fa fa-angle-right"></i>
+        </span>
+	</ons-list-item>
+
+	<ons-list-item modifier="tappable">
+		<img src="img/photos/kristen-bell.png"/>
+		<a class="customer-request" ng-click="myNavigator.pushPage('customerRequestView.html')">
+			<div class="customer-request-description">
+				Sink has a leak
+			</div>
+			<div class="customer-request-location">
+			</div>
+		</a>
+		<span class="list-item-action">
+          <i class="fa fa-angle-right"></i>
+        </span>
+	</ons-list-item>
+	<ons-list-item modifier="tappable">
+		<img src="img/photos/ryan-reynolds.png"/>
+		<a class="customer-request" ng-click="myNavigator.pushPage('customerRequestView.html')">
+			<div class="customer-request-description">
+				Clogged kitchen sink
+			</div>
+			<div class="customer-request-location">
+
+			</div>
+		</a>
+		<span class="list-item-action">
+          <i class="fa fa-angle-right"></i>
+        </span>
+	</ons-list-item>
+	<ons-list-item modifier="tappable">
+		<img src="img/photos/mr-miyagi.png"/>
+		<a class="customer-request" ng-click="myNavigator.pushPage('customerRequestView.html')">
+			<div class="customer-request-description">
+				Dishwasher sprung a leak
+			</div>
+			<div class="customer-request-location">
+			</div>
+		</a>
+		<span class="list-item-action">
+          <i class="fa fa-angle-right"></i>
+        </span>
+	</ons-list-item>
+	</ons-list>
+</ons-page>

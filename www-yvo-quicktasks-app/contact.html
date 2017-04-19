@@ -1,0 +1,48 @@
+<ons-page ng-controller="ContactController" modifier="contact">
+  <ons-toolbar modifier="darkToolbar">
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Request</div>
+    <div class="right">
+      <ons-button modifier="quiet cancel" ng-click="cancelRequest()"><i class="hi hi-close"></i></ons-button>
+    </div>
+  </ons-toolbar>
+  <ons-row>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col>
+    </ons-col>
+  </ons-row>
+  <div class="main-page-content">
+    <h3>Contact Info</h3>
+    
+        <div class = "textInputDiv">
+      <input type="text" ng-model="data.nameParam" class="text-input" placeholder="Name" value="" ng-enter="submit()" auto-focus> 
+      <br /> 
+      <br />
+    </div>
+    
+    
+    <div class = "textInputDiv">
+      <input type="text" ng-model="data.emailParam" class="text-input" placeholder="Email" value="" ng-enter="submit()" auto-focus> <button ng-click="submit()"><i class="fa fa-envelope-o"></i></button>
+    </div>
+    <p>
+      or
+    </P>
+    <div class = "textInputDiv">
+      <input type="number" ng-model="data.phoneParam"  class="text-input" placeholder="SMS" value="" ng-enter="submit()" > <button ng-click="submit"><i class="fa fa-mobile-phone"></i></button>
+    </div>
+    <div class="submitButtonContainer">
+      <ons-button ng-click="submit()" modifier="large">Next</ons-button>
+    </div>
+  </div>
+</ons-page>

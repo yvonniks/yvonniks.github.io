@@ -1,0 +1,39 @@
+
+<ons-page modifier="welcomeFork" ng-controller="WelcomeForkController">
+  <ons-toolbar modifier="darkToolbar">
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Request</div>
+    <div class="right">
+      <ons-button modifier="quiet cancel" ng-click="cancelRequest()"><i class="hi hi-close"></i></ons-button>
+    </div>
+  </ons-toolbar>
+  <ons-row>
+    <ons-col modifier="progress">
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+      <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+    <ons-col>
+    </ons-col>
+  </ons-row>
+  <div class="main-page-content">
+    <h3>I am looking for</h3>
+    <div class = "textInputDiv">
+      <input type="text" ng-model="data.searchParam" class="text-input" placeholder="Search" value="" ng-enter="submit()" auto-focus >
+      <button ng-click="submit()"><i class="fa fa-search"></i></button>
+    </div> 
+    
+    <p>Select a category</p>
+    
+    <div class="submitButtonContainer">
+    <ons-button ng-click="submit()" modifier="large">Next</ons-button>
+    </div>
+  </div>
+</ons-page>

@@ -1,0 +1,191 @@
+.panel-account ::-webkit-input-placeholder {
+   color: #f7fff9;
+}
+
+.panel-account :-moz-placeholder { /* Firefox 18- */
+   color: #f7fff9;
+}
+
+.panel-account ::-moz-placeholder {  /* Firefox 19+ */
+   color: #f7fff9;
+}
+
+.panel-account :-ms-input-placeholder {
+   color: #f7fff9;
+}
+.panel-account {
+    background: #1caeeb;
+    position: relative;
+    /* padding-top: 0; */
+    padding: 10px 5px;
+    text-align: left;
+    /* vertical-align: top; */
+}
+
+.panel-account-text {
+    /* position: absolute; */
+    /* top: 17px; */
+    /* left: 120px; */
+    /* white-space: nowrap; */
+    display: inline-block;
+    color: #fff;
+    width: 140px;
+    /* height: 136px; */
+    /* border: 1px solid tomato; */
+    vertical-align: middle;
+
+    width: 200px;
+}
+.panel-account-text .yourName{
+    font-size: 22px;
+}
+.panel-account-text .companyName{
+    font-size: 16px;
+}
+.panel-account-text .location{
+    font-size: 14px;
+}
+.panel-account-text input {
+    width: 220px;
+    height: 35px;
+    border-bottom-color: #60cef8;
+    color: #fff;
+}
+
+.label-profile {
+    margin: 0px 10px 0px 10px;
+}
+
+.list-container {
+    margin: 5px 0px 10px 0px;
+}
+
+.fb-area {
+    position: absolute;
+    left: 5px;
+    top: 4px;
+}
+
+.fb-icon {
+    opacity: 0.4;
+    font-size: 30px;
+}
+
+.fb-text {
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    bottom: 0px;
+    line-height: 44px;
+}
+
+.fb-button {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    line-height: 28px;
+    opacity: 0.4;
+}
+.panel-pic {
+    width: 90px;
+    height: 90px;
+    padding-top: 0;
+    position: relative;
+    border-radius: 50%;
+    border: 5px solid #bfe7fb;
+    margin-top: 5px;
+    /* margin: 10px; */
+    box-shadow: 2px 3px 0 #1395c8;
+    /* -webkit-transform: rotate(-36deg); */
+    display: inline-block;
+    text-align: center;
+    /* border: 1px solid blue; */
+    vertical-align: middle;
+}
+.panel-pic .fa {
+    font-size: 70px;
+    line-height: 90px;
+    color: #2d353c;
+    /* -webkit-transform: rotate(36deg); */
+}
+.list-item {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.list-item input {
+    margin: 0px;
+    width: 100%;
+    height: 47px;
+    outline: 0px;
+    border: 0px;
+    font-family: 'FontAwesome';
+}
+
+.list-item-optional {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    opacity: 0.4;
+    font-size: 12px;
+}
+
+.about-service {
+    margin: 0px 10px 0px 10px;
+    font-size: 12px;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.register-button-full {
+    margin: 8px !important;
+    padding: 0px !important;
+}
+.list-item .width-45 {
+    width: 30%;
+}
+
+.panel-description,
+.panel-specialties {
+    height: 75px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 20px 0 20px;
+    color: #4040;
+}
+
+
+
+.panel-availability {
+    text-align: left;
+    background: #f2f1f5;
+    padding: 20px;
+    font-size: 14px;
+}
+p {
+    margin: 0;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    color: #999;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 8%;
+}
+.panel-availability div {
+    margin-bottom: 10px;
+}
+.panel-availability input{
+    font-family: 'FontAwesome';
+    width: 40%;
+}
+.checkbox--noborder.day-of-week {
+    font-size: 14px;
+}
+.checkbox--noborder.day-of-week > .checkbox__checkmark{
+    width: 20px;
+    height: 20px;
+}
