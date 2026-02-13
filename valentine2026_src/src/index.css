@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --color-valentine-pink: #fce4ec;
+  --color-valentine-blush: #f8bbd0;
+  --color-valentine-rose: #e91e63;
+  --color-valentine-deep-rose: #c2185b;
+  --color-valentine-cream: #fff9f9;
+}
+
+body {
+  @apply bg-valentine-cream text-gray-800 font-serif;
+  margin: 0;
+  min-height: 100vh;
+}
