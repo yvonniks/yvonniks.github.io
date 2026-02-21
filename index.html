@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yvonne So — Designer & Design Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111;
+    --white: #fff;
+    --gray: #666;
+    --mid-gray: #999;
+    --light-gray: #f5f5f3;
+    --border: #e8e8e8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--black);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+
+  /* ─────────────────────────────────────────
+     NAV
+  ───────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    background: rgba(255,255,255,0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--black);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--mid-gray);
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--black);
+  }
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ─────────────────────────────────────────
+     HERO
+  ───────────────────────────────────────── */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 64px;
+  }
+  .hero-image {
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-text { flex: 1; }
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.13;
+    font-weight: 400;
+    margin-bottom: 22px;
+    letter-spacing: -0.015em;
+  }
+  .hero-text h1 strong { font-style: italic; font-weight: 400; }
+  .hero-text p {
+    font-size: 17px;
+    color: var(--gray);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 100px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .btn-dark {
+    background: var(--black);
+    color: var(--white);
+  }
+  .btn-dark:hover { background: #333; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .btn-outline {
+    background: transparent;
+    color: var(--black);
+    border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--black); }
+
+  /* ─────────────────────────────────────────
+     MARQUEE
+  ───────────────────────────────────────── */
+  .marquee-section {
+    overflow: hidden;
+    padding: 18px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 16px;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-track img {
+    height: 190px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ─────────────────────────────────────────
+     LOGO STRIP
+  ───────────────────────────────────────── */
+  .logo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 28px 44px;
+    padding: 56px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .logo-strip img {
+    height: 30px;
+    width: auto;
+    filter: grayscale(100%) opacity(0.5);
+    object-fit: contain;
+    transition: filter 0.25s;
+  }
+  .logo-strip img:hover { filter: grayscale(0%) opacity(1); }
+
+  /* ─────────────────────────────────────────
+     SECTION SCAFFOLD
+  ───────────────────────────────────────── */
+  .section-anchor { /* invisible scroll target with nav offset */
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+  }
+  .section-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 40px 36px;
+  }
+  .section-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 580px;
+    line-height: 1.75;
+  }
+
+  /* ─────────────────────────────────────────
+     EXPERIENCE — WORK CARDS
+  ───────────────────────────────────────── */
+  .work-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+    display: grid;
+    gap: 28px;
+  }
+  .work-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .work-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .work-card-img { aspect-ratio: 16/10; overflow: hidden; background: var(--light-gray); }
+  .work-card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+  .work-card:hover .work-card-img img { transform: scale(1.04); }
+  .work-card-body {
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+  }
+  .work-card-body h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .work-card-body p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 22px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--gray);
+  }
+  .work-card.flip { direction: rtl; }
+  .work-card.flip > * { direction: ltr; }
+
+  /* ─────────────────────────────────────────
+     EARLIER WORK GALLERY
+  ───────────────────────────────────────── */
+  .gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 40px 60px;
+    border-top: 1px solid var(--border);
+  }
+  .gallery-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    padding-top: 52px;
+  }
+  .gallery-section > p {
+    font-size: 15px;
+    color: var(--gray);
+    max-width: 600px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  .gallery-grid img:hover { transform: scale(1.02); }
+  .gallery-grid img:first-child { grid-column: span 2; height: 240px; }
+
+  /* ─────────────────────────────────────────
+     EXPERIENCE + EXPERTISE COLUMNS
+  ───────────────────────────────────────── */
+  .skills-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    border-top: 1px solid var(--border);
+    padding-top: 56px;
+  }
+  .info-col h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .exp-company { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .exp-role { font-size: 13px; color: var(--gray); line-height: 1.6; }
+  .expertise-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+  .exp-tag {
+    font-size: 13px;
+    padding: 5px 13px;
+    background: var(--light-gray);
+    border-radius: 100px;
+  }
+
+  /* ─────────────────────────────────────────
+     ABOUT — BIO
+  ───────────────────────────────────────── */
+  .about-hero-img {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 0;
+  }
+  .about-hero-img img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
+  .bio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bio-heading {
+    grid-column: 1 / -1;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+  }
+  .bio-col p {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.82;
+    margin-bottom: 18px;
+  }
+  .bio-col p:last-child { margin-bottom: 0; }
+
+  /* ─────────────────────────────────────────
+     PASSIONS
+  ───────────────────────────────────────── */
+  .passions-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .passions-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .passions-section > p {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 8px;
+  }
+  .passions-section > p:last-of-type { margin-bottom: 36px; }
+  .photo-grid { columns: 4; column-gap: 10px; }
+  .photo-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    object-fit: cover;
+    transition: opacity 0.25s;
+  }
+  .photo-grid img:hover { opacity: 0.88; }
+
+  /* ─────────────────────────────────────────
+     ICEBREAKERS
+  ───────────────────────────────────────── */
+  .icebreakers-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .icebreakers-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 44px;
+  }
+  .icebreakers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .icebreaker-item {
+    padding: 28px 36px 28px 0;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .icebreaker-item:nth-child(3n)   { border-right: none; padding-right: 0; padding-left: 36px; }
+  .icebreaker-item:nth-child(3n-1) { padding-left: 36px; }
+  .icebreaker-item:nth-last-child(-n+3) { border-bottom: none; }
+  .icebreaker-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 8px;
+  }
+  .icebreaker-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  /* ─────────────────────────────────────────
+     RECOMMENDATIONS CAROUSEL
+  ───────────────────────────────────────── */
+  .recs-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .recs-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .recs-section > p {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 540px;
+    line-height: 1.75;
+  }
+  .carousel-track-outer { overflow: hidden; border-radius: 16px; }
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .rec-card {
+    flex: 0 0 calc(50% - 10px);
+    background: var(--light-gray);
+    border-radius: 16px;
+    padding: 38px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+  }
+  .rec-card blockquote {
+    font-size: 15px;
+    line-height: 1.82;
+    color: var(--black);
+    font-style: normal;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .rec-card blockquote::before { content: '\201C'; }
+  .rec-card blockquote::after  { content: '\201D'; }
+  .rec-card-author h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 3px;
+  }
+  .rec-card-author p { font-size: 12px; color: var(--mid-gray); letter-spacing: 0.02em; }
+  .carousel-controls { display: flex; align-items: center; gap: 10px; margin-top: 24px; }
+  .carousel-btn {
+    width: 42px; height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--white);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    color: var(--black);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .carousel-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+  .carousel-dots { display: flex; gap: 6px; align-items: center; }
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .dot.active { background: var(--black); transform: scale(1.4); }
+
+  /* ─────────────────────────────────────────
+     CONTACT
+  ───────────────────────────────────────── */
+  .contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+  }
+  .contact-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin-bottom: 20px;
+    max-width: 700px;
+    line-height: 1.15;
+  }
+  .contact-section p {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 8px;
+  }
+  .contact-section a {
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--black);
+    transition: opacity 0.2s;
+  }
+  .contact-section a:hover { opacity: 0.55; }
+  .contact-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+
+  /* ─────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--mid-gray);
+  }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--black);
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--mid-gray);
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .footer-links a:hover { color: var(--black); }
+
+  /* ─────────────────────────────────────────
+     SECTION DIVIDER
+  ───────────────────────────────────────── */
+  .section-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 48px 0 0;
+  }
+  .section-label span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─────────────────────────────────────────
+     RESPONSIVE
+  ───────────────────────────────────────── */
+  @media (max-width: 900px) {
+    #home { flex-direction: column; gap: 32px; padding: 100px 24px 60px; }
+    .hero-image { width: 180px; height: 180px; }
+    .work-card { grid-template-columns: 1fr; }
+    .work-card.flip { direction: ltr; }
+    .work-card-body { padding: 28px 28px 32px; }
+    .bio-section { grid-template-columns: 1fr; gap: 0; }
+    .bio-heading { margin-bottom: 24px; }
+    .skills-section { grid-template-columns: 1fr; gap: 40px; }
+    .icebreakers-grid { grid-template-columns: 1fr 1fr; }
+    .icebreaker-item:nth-child(3n)   { border-right: 1px solid var(--border); padding-left: 0; padding-right: 36px; }
+    .icebreaker-item:nth-child(2n)   { border-right: none; padding-left: 36px; padding-right: 0; }
+    .icebreaker-item:nth-last-child(-n+2) { border-bottom: none; }
+    .icebreaker-item:nth-last-child(3) { border-bottom: 1px solid var(--border); }
+    .rec-card { flex: 0 0 100%; }
+    .photo-grid { columns: 2; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 18px; }
+    .section-header, .work-grid, .gallery-section,
+    .skills-section, .about-hero-img, .bio-section,
+    .passions-section, .icebreakers-section, .recs-section,
+    .contact-section, .logo-strip, .section-divider { padding-left: 20px; padding-right: 20px; }
+    .about-hero-img img { height: 220px; }
+    .icebreakers-grid { grid-template-columns: 1fr; }
+    .icebreaker-item { border-right: none !important; padding: 20px 0 !important; border-bottom: 1px solid var(--border) !important; }
+    .icebreaker-item:last-child { border-bottom: none !important; }
+    footer { padding: 20px; justify-content: center; text-align: center; }
+    .footer-links { justify-content: center; }
+    .photo-grid { columns: 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <a class="nav-logo" href="#home">YVONNE SO</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#experience">Experience</a>
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="home">
+  <div class="hero-image">
+    <img src="https://framerusercontent.com/images/cHsXsO2X5tLEkQiazDMkCEEZtU.jpeg?width=389&height=389" alt="Yvonne So">
+  </div>
+  <div class="hero-text reveal">
+    <h1>Hello. I'm <strong>Yvonne So</strong>, a designer, team leader, and force multiplier.</h1>
+    <p>I help solve complex problems and craft meaningful experiences to improve lives while driving clarity, outcomes, and business results.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-dark" href="#experience">View work</a>
+      <a class="btn btn-outline" href="#about">About me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MARQUEE ═══════════════════ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <img src="https://framerusercontent.com/images/Z4AKjjMbsJwfcLzvUIyoLRGJKc.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/V5d6uuYkZKivB4yERAAdlT8yZRI.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/CN25N6kmVXRhVJFV62xabvNggE.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/n2X497kObLvO0IJsX0w9jrjBcP4.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/XTgkB8egusE2hEebLasImVvw.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/Z4AKjjMbsJwfcLzvUIyoLRGJKc.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/V5d6uuYkZKivB4yERAAdlT8yZRI.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/CN25N6kmVXRhVJFV62xabvNggE.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/n2X497kObLvO0IJsX0w9jrjBcP4.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/XTgkB8egusE2hEebLasImVvw.png?width=600" alt="">
+  </div>
+</div>
+
+<!-- LOGO STRIP -->
+<div class="logo-strip reveal">
+  <img src="https://framerusercontent.com/images/8uaIQzpDoXhES9pSOwDn1xjwQ1Q.png?width=300" alt="Logo">
+  <img src="https://framerusercontent.com/images/4xHHpDFIJIIArF92HHaCC130sU.png?width=300" alt="Logo">
+  <img src="https://framerusercontent.com/images/QdsaTHJy5laCXIz4xrxJrViWo.png?width=300" alt="Logo">
+  <img src="https://framerusercontent.com/images/Nu3w303kxoQA1VfkdDX8E5HTYPA.png?width=300" alt="Logo">
+  <img src="https://framerusercontent.com/images/iZ9P92F2qpcsSV2tAdKcqr1xI8.png?width=300" alt="Logo">
+</div>
+
+<!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+<span class="section-anchor" id="experience"></span>
+<div class="section-divider reveal">
+  <div class="section-label"><span>Experience</span></div>
+</div>
+
+<div class="section-header reveal">
+  <h2>Leadership highlights</h2>
+  <p>I'm known for amplifying people and partners, growing and scaling teams with intention, and delivering work that improves lives while driving durable business and economic outcomes.</p>
+</div>
+
+<div class="work-grid">
+
+  <div class="work-card reveal">
+    <div class="work-card-img">
+      <img src="https://framerusercontent.com/images/IqcIifPthFFS9GiBlT8jfP0NE.png?width=800" alt="Target">
+    </div>
+    <div class="work-card-body">
+      <h3>Target Inspire &amp; Motivate</h3>
+      <p>Leading an incredible team at <a href="https://www.target.com" target="_blank">Target</a> supporting upper funnel guest experiences that drive discovery, engagement, and conversion. Driving strategy for page components, signals, social commerce, AI integration, and AR/VR capabilities such as virtual try-on.</p>
+      <div class="tags">
+        <span class="tag">AI/ML</span>
+        <span class="tag">Vision</span>
+        <span class="tag">Experimentation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card flip reveal">
+    <div class="work-card-img">
+      <img src="https://framerusercontent.com/images/Z4AKjjMbsJwfcLzvUIyoLRGJKc.png?width=800" alt="Walmart">
+    </div>
+    <div class="work-card-body">
+      <h3>Walmart+ Membership</h3>
+      <p>Led design on the <a href="https://www.walmart.com/plus" target="_blank">Walmart+</a> team to bring member benefits to life, including video streaming, fuel, dining, and AI-driven services. Launched 10+ new benefit programs leading to growth and conversion of xxM net new members, 2x average member savings, 60% increase in engagement, 158%+ event participation, and nationwide expansion of InHome Delivery to 62M households.</p>
+      <div class="tags">
+        <span class="tag">AI/ML</span>
+        <span class="tag">Vision</span>
+        <span class="tag">Experimentation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card reveal">
+    <div class="work-card-img">
+      <img src="https://framerusercontent.com/images/5ke493hGKkbmOzmu5pbat9Pa7Y.png?width=800" alt="Meta">
+    </div>
+    <div class="work-card-body">
+      <h3>Meta Ads Consent &amp; Value</h3>
+      <p>Led a growth &amp; monetization team at <a href="https://www.meta.com" target="_blank">Meta</a> building 0 to 1 products, experimentation, and big bets across a family of apps to help people around the world get more value from personalized ads. Increased team velocity by 134%, doubled experiments in additional markets, and drove 10x conversion lift for FB, 3x lift for IG.</p>
+      <div class="tags">
+        <span class="tag">Monetization</span>
+        <span class="tag">Ads Privacy</span>
+        <span class="tag">Growth</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card flip reveal">
+    <div class="work-card-img">
+      <img src="https://framerusercontent.com/images/V5d6uuYkZKivB4yERAAdlT8yZRI.png?width=800" alt="Intuit">
+    </div>
+    <div class="work-card-body">
+      <h3>Intuit QuickBooks</h3>
+      <p>Most recently led QB Payroll at <a href="https://www.intuit.com" target="_blank">Intuit</a>, enriching customer experiences and simplifying the complexities of paying people and taxes. Introduced Premium and Elite products, bringing in $30M ARR, decreased 70K care calls (over ~$1M in savings), 3x growth in mobile users and increased to 4+ star App Store ratings.</p>
+      <div class="tags">
+        <span class="tag">Growth</span>
+        <span class="tag">Cross-Platform</span>
+        <span class="tag">Innovation</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EARLIER WORK -->
+<div class="gallery-section reveal">
+  <h2>Earlier work</h2>
+  <p>A snapshot of work from earlier years that shaped my foundation as a designer, thought partner, and leader, spanning in-house teams as well as agency and consultancy environments. Notable clients include Citibank, Intuit, PayPal, Thomson Reuters, T-Mobile, Heineken, and LG Electronics.</p>
+  <div class="gallery-grid">
+    <img src="https://framerusercontent.com/images/plhafqaHA4xwgtMpqjoy721eE8.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/ubR5NafInPPTQGUpn5M9vj8.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/LOlqX9DEBxfAj70m1p0ALVaejKM.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/La9Pu5FGVOD3fhOQenesRDsOUvk.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/akqKhZKsila2ybAOQbpQxgIClvQ.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/QUvXRIGed1C45wUAUtzSCvNod7w.png?width=600" alt="">
+    <img src="https://framerusercontent.com/images/qjcbEmwHrZhMnRbcIA3IRjYXbs.png?width=600" alt="">
+  </div>
+</div>
+
+<!-- EXPERIENCE + EXPERTISE -->
+<div class="skills-section reveal">
+  <div class="info-col">
+    <h3>Experience</h3>
+    <div class="exp-item"><div class="exp-company">Target</div><div class="exp-role">Senior UX Design Manager</div></div>
+    <div class="exp-item"><div class="exp-company">Walmart</div><div class="exp-role">Senior Manager II, Design</div></div>
+    <div class="exp-item"><div class="exp-company">Meta</div><div class="exp-role">Product Design Manager</div></div>
+    <div class="exp-item"><div class="exp-company">Intuit</div><div class="exp-role">Product Design Manager<br>Principal Product Designer</div></div>
+    <div class="exp-item"><div class="exp-company">Fjord / Accenture</div><div class="exp-role">Interaction Design Lead<br>Senior Service Designer</div></div>
+    <div class="exp-item"><div class="exp-company">Publicis Modem</div><div class="exp-role">Senior Interaction Designer</div></div>
+    <div class="exp-item"><div class="exp-company">Accessibility Institute</div><div class="exp-role">Researcher &amp; Web Developer</div></div>
+  </div>
+  <div class="info-col">
+    <h3>Expertise</h3>
+    <div class="expertise-tags">
+      <span class="exp-tag">Design Leadership</span>
+      <span class="exp-tag">Design Direction</span>
+      <span class="exp-tag">Coaching</span>
+      <span class="exp-tag">Mentorship</span>
+      <span class="exp-tag">AI/ML Design</span>
+      <span class="exp-tag">UX/UI Design</span>
+      <span class="exp-tag">Figma</span>
+      <span class="exp-tag">Design Strategy</span>
+      <span class="exp-tag">Design Systems</span>
+      <span class="exp-tag">Product Design</span>
+      <span class="exp-tag">Web, Mobile, Native Apps</span>
+      <span class="exp-tag">Service Design</span>
+      <span class="exp-tag">UX Prototyping</span>
+      <span class="exp-tag">Journey Mapping</span>
+      <span class="exp-tag">UX Research</span>
+      <span class="exp-tag">Stakeholder Management</span>
+      <span class="exp-tag">Strategic Partnerships</span>
+      <span class="exp-tag">Cross-Functional Collaboration</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<span class="section-anchor" id="about"></span>
+<div class="section-divider reveal">
+  <div class="section-label"><span>About</span></div>
+</div>
+
+<div class="about-hero-img reveal" style="padding-top:40px;">
+  <img src="https://framerusercontent.com/images/aEWGCcj9SWX9LjhczF6mxKq8.png?width=1200" alt="Yvonne So at work">
+</div>
+
+<!-- BIO -->
+<div class="bio-section reveal">
+  <h2 class="bio-heading">Craft, clarity, and care</h2>
+  <div class="bio-col">
+    <p>I'm Yvonne So, a design leader with 18+ years of experience across UX, digital platforms, product, and service design. I specialize in tackling complex problems with deep customer empathy, translating ambiguity into clarity, and driving user value and business impact. I guide teams, lead large-scale programs, shape strategy, and stay hands-on as needed, working from vision to execution and down to the pixels.</p>
+    <p>I'm a people-first, purpose-driven leader who believes great work happens when people feel empowered, supported, and seen. I lead with authenticity, transparency, and trust, and I aim to build inclusive, collaborative environments where teams do their best work and design craft can thrive.</p>
+  </div>
+  <div class="bio-col">
+    <p>Colleagues often describe me as a strong systems thinker who brings structure to complexity and rallies teams around a shared vision. I balance strategy with execution, connecting design decisions to outcomes while keeping customers at the center.</p>
+  </div>
+</div>
+
+<!-- PASSIONS -->
+<div class="passions-section reveal">
+  <h2>Passions</h2>
+  <p>In my free time, I enjoy any kind of family activity, especially through the lens of my 2 small kids.</p>
+  <p>I also enjoy cooking, writing, dancing, learning languages, and photography.</p>
+  <p>I've lately been playing around with different AI tools and technologies. I build things for fun, and I continuously iterate, try, play, share, and teach.</p>
+  <div class="photo-grid">
+    <img src="https://framerusercontent.com/images/8pboaXXPXVqNXWMrfeyj5J79jc.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/oWmgbHbJj9rojJgCRS83KMYEjU.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/XC25FvtL8qRwLXAlbjKCJP6rts.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/xg1JEOCGJBePvjaxkbsMDOSyn8.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/IyOocDyRxVFlEc7baitbwTK0.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/eZIcX2JOIGFLC4smSxD4DeBN0E.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/m50AuaSAOG3ZFjU3ByE2nGspnzs.jpg?width=600" alt="">
+    <img src="https://framerusercontent.com/images/wk9KrR1czXEh1fNUuz5ajAuj0k.jpg?width=600" alt="">
+  </div>
+</div>
+
+<!-- ICEBREAKERS -->
+<div class="icebreakers-section reveal">
+  <h2>Icebreakers</h2>
+  <div class="icebreakers-grid">
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">Superlative</div>
+      <div class="icebreaker-value">Most likely to win a messiest desk competition</div>
+    </div>
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">What gives me energy</div>
+      <div class="icebreaker-value">Caffeine and action movies</div>
+    </div>
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">Last meal ever</div>
+      <div class="icebreaker-value">Sushi and matcha ice cream</div>
+    </div>
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">I'm fascinated by</div>
+      <div class="icebreaker-value">How humans think, learn, and navigate life's complexities</div>
+    </div>
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">I want to be good at</div>
+      <div class="icebreaker-value">Parenting</div>
+    </div>
+    <div class="icebreaker-item">
+      <div class="icebreaker-label">I am currently learning</div>
+      <div class="icebreaker-value">German grammar and vocabulary</div>
+    </div>
+  </div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<div class="recs-section reveal">
+  <h2>Recommendations</h2>
+  <p>What is it like to work with me? Here are some kind words from leaders, peers, partners, and industry experts.</p>
+  <div class="carousel-track-outer">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="rec-card">
+        <blockquote>Yvonne excels at building strong partnerships across Product, Business, Engineering, and Creative teams, ensuring collaboration is at the forefront of every project. Her energy and enthusiasm are infectious, and her passion for her work is evident in everything she does. Yvonne and her team consistently deliver delightful design experiences for Walmart+ members, showcasing her talent for creating user-centric solutions.</blockquote>
+        <div class="rec-card-author"><h3>Carly Price</h3><p>Group Design Director, Walmart</p></div>
+      </div>
+      <div class="rec-card">
+        <blockquote>I got to experience firsthand Yvonne's business acumen, diplomacy, and ability to read between the lines, clarify ambiguity, and ask incisive questions that help the team focus and prioritize. She understands what executive and cross-functional leadership want to know — and at what fidelity — and artfully guides her team to deliver what's needed now while also setting them up to deliver what's needed next.</blockquote>
+        <div class="rec-card-author"><h3>Cordelia Chadwick</h3><p>Strategy and Design Leader, Meta</p></div>
+      </div>
+      <div class="rec-card">
+        <blockquote>Yvonne was crucial in coordinating design efforts across teams and launching successful, user-focused features. Her dedication to the team's growth is truly admirable, as she fostered a supportive atmosphere, empowered her designers with projects that aligned to their skills and interests, and aligned XFN toward goals. She earned tremendous respect from colleagues across Meta.</blockquote>
+        <div class="rec-card-author"><h3>Mary Athappilly</h3><p>Product Leader, Meta</p></div>
+      </div>
+      <div class="rec-card">
+        <blockquote>Yvonne is a multi-talented designer who will inspire you to do something great. She has the unique ability to create, communicate, and advocate design visions that are so fresh and so clean. As an engineer, Yvonne is the perfect partner — her combination of design skills and technical knowledge push us to be our very best. Yvonne is also more than just a designer; she is a provocateur who looks at the landscape of the world, takes risks, and uses design to solve big problems.</blockquote>
+        <div class="rec-card-author"><h3>Ashley Fernandes</h3><p>Technology Leader, Intuit</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<span class="section-anchor" id="contact"></span>
+<div class="section-divider reveal">
+  <div class="section-label"><span>Contact</span></div>
+</div>
+
+<div class="contact-section reveal">
+  <h2>Let's build something meaningful together.</h2>
+  <p>Want to learn more about my process, dive deeper into specific projects, collaborate on something meaningful, or geek out about design (or life)?</p>
+  <p style="margin-top:4px;">Currently based in Houston, Texas. Case studies available upon request.</p>
+  <div class="contact-btns">
+    <a class="btn btn-dark" href="mailto:yvonneyso@gmail.com">Email me</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/yvonneyso/" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <a class="footer-logo" href="#home">YVONNE SO</a>
+  <div class="footer-links">
+    <a href="#experience">Experience</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <span>© 2026</span>
+</footer>
+
+<script>
+  /* ── Scroll reveal ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ── Active nav link highlight ── */
+  const sections = [
+    { id: 'experience', el: document.getElementById('experience') },
+    { id: 'about',      el: document.getElementById('about') },
+    { id: 'contact',    el: document.getElementById('contact') },
+  ];
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function onScroll() {
+    const scrollY = window.scrollY + 100;
+    let active = null;
+    sections.forEach(s => {
+      if (s.el && s.el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+        active = s.id;
+      }
+    });
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').replace('#', '');
+      link.classList.toggle('active', href === active);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Carousel ── */
+  const track    = document.getElementById('carouselTrack');
+  const dotsEl   = document.getElementById('carouselDots');
+  const prevBtn  = document.getElementById('prevBtn');
+  const nextBtn  = document.getElementById('nextBtn');
+  const cards    = track.querySelectorAll('.rec-card');
+  const total    = cards.length;
+  let current    = 0;
+  let perView    = window.innerWidth < 900 ? 1 : 2;
+  let maxIndex   = total - perView;
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i++) {
+      const d = document.createElement('span');
+      d.className = 'dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function updateSizes() {
+    perView  = window.innerWidth < 900 ? 1 : 2;
+    maxIndex = total - perView;
+    current  = Math.min(current, maxIndex);
+    const gap    = 20;
+    const outerW = track.parentElement.offsetWidth;
+    const cardW  = perView === 1 ? outerW : (outerW - gap) / 2;
+    cards.forEach(c => { c.style.flex = `0 0 ${cardW}px`; });
+    buildDots();
+    goTo(current);
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex));
+    const gap    = 20;
+    const outerW = track.parentElement.offsetWidth;
+    const cardW  = perView === 1 ? outerW : (outerW - gap) / 2;
+    track.style.transform = `translateX(-${current * (cardW + gap)}px)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  window.addEventListener('resize', updateSizes);
+  updateSizes();
+</script>
+</body>
+</html>
